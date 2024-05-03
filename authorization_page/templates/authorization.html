@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Сторінка авторизації
+{% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('authorization_page.static', filename = 'authorization.css') }}">
+{% endblock %}
+
+{% block content %}
+    <a href="http://127.0.0.1:5000/registration">REGISTRATION</a>
+    <form method="post"id = authorization_content>
+        <h1>Login or email</h1>
+        <input class = "authorization_input" type = "text" login = "login">
+        <h1>Password</h1>
+        <input class = "authorization_input" type = "text" name = "password">
+        <button class = "authorization_submit" type = "submit">Send</button>
+    </form>
+{% endblock %}

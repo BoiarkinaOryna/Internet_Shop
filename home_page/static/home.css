@@ -1,0 +1,31 @@
+h1{
+    /* background-color: brown; */
+    margin: 0 auto;
+    font-size: 100px;
+    /* font-family: Inter; */
+    font-weight: 400;
+    width: 831px;
+    height: 165px;
+    text-align: center;
+    margin-top: 18%;
+}
+
+.links{
+    padding: 4px, 122px, 4px, 122px;
+    margin-left: 70%;
+    width: Fixed 429px;
+    height: Hug 41px;
+    color: black;
+}
+
+a{
+    margin-left: 16px;
+    width: 200px;
+    height: 33px;
+    font-size: 24px;
+}
+
+a:visited{
+    /* background-color: aquamarine; */
+    color: black;
+}

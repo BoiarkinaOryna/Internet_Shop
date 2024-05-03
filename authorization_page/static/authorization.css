@@ -1,0 +1,46 @@
+form{
+    margin: 0 auto;
+    width: 488px;
+    height: 455px;
+    padding: 10px;
+    border: solid 3px;
+    border-radius: 25px;
+    margin-top: 5%; 
+    display: grid;
+}
+
+a{
+    margin-left: 87%;
+    width: 200px;
+    height: 33px;
+    font-size: 24px;
+}
+
+a:visited{
+    color: black;
+}
+
+h1{
+    margin-top: 44px;
+    margin-left: 39px;
+    font-family: Inter;
+    line-height: 29.05px;
+}
+.authorization_input{
+    width: 370px;
+    height: 56px;
+    border: solid 3px;
+    border-radius: 10px;
+    margin-left: 39px;
+}
+
+.authorization_submit{
+    width: 204px;
+    height: 56px;
+    border: solid 2px;
+    border-radius: 10px;
+    font-size: 24px;
+    margin-top: 17px;
+    position: relative;
+    left: 27%;
+}
