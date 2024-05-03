@@ -8,8 +8,8 @@ registration_page.registr.add_url_rule(rule = "/registration", view_func = regis
 authorization_page.auth.add_url_rule(rule = "/authorization", view_func = authorization_page.show_authorization_page)
 
 
-shop.register_blueprint(blueprint = home_page.home)
+shop.register_blueprint(blueprint = home_page.home, methods = ["GET", "POST"])
 
-shop.register_blueprint(blueprint = registration_page.registr)
+shop.register_blueprint(blueprint = registration_page.registr, methods = ["GET", "POST"])
 
-shop.register_blueprint(blueprint = authorization_page.auth)
+shop.register_blueprint(blueprint = authorization_page.auth, methods = ["GET", "POST"])
