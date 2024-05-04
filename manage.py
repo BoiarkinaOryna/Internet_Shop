@@ -1,4 +1,4 @@
 import project
 
 if __name__ == "__main__":
-    project.settings.shop.run(debug = True)
+    project.shop.run(debug = True)
