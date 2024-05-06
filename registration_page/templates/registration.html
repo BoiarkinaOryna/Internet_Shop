@@ -12,13 +12,13 @@
     <a href = "http://127.0.0.1:5000/authorization">AUTHORIZATION</a>
     <form method = "post" id = "registration_content">
         <h1>Login</h1>
-        <input class = "registration_input" type = "text" name = "name">
+        <input class = "registration_input" type = "text" name = "name" required>
         <h1>Email</h1>
-        <input class = "registration_input" type = "text" name = "email">
+        <input class = "registration_input" type = "text" name = "email" required>
         <h1>Password</h1>
-        <input class = "registration_input" type = "text" name = "password1">
+        <input class = "registration_input" type = "text" name = "password1" required>
         <h1>Password confirmation</h1>
-        <input class = "registration_input" type = "text" name = "password2">
+        <input class = "registration_input" type = "text" name = "password2" required>
         <button class = "registration_submit" type = "submit">Send</button>
     </form>
 {% endblock %}

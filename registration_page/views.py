@@ -1,9 +1,10 @@
-import flask
+import flask, flask_login
 from .models import User
 from project.settings import DB
+from project.settings import shop
 
 def show_registration_page():
-    print(User.query.all())
+    print("User.query in reg: ", User.query.all())
     print("flask.request.method =", flask.request.method)
     if flask.request.method == "POST":
         print("Post")
@@ -13,8 +14,15 @@ def show_registration_page():
                 email = flask.request.form['email'],
                 password = flask.request.form['password1'],
                 password_confirmation = flask.request.form["password2"]
-
             )
+            if flask_login.current_user.is_authenticated:
+                print("Ви вже авторизовані")
+                return "Ви вже авторизовані"
+            else:
+                for user in User.query.filter_by(name = flask.request.form['name']):
+                    if user.password == flask.request.form['password1']:
+                        flask_login.login_user(user)
+                        return flask.redirect("/")
             try:
                 DB.session.add(users)
                 DB.session.commit()
@@ -23,3 +31,4 @@ def show_registration_page():
             else:
                 pass
     return flask.render_template(template_name_or_list = "registration.html")
+
