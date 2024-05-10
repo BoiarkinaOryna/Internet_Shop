@@ -11,21 +11,25 @@ h1{
 }
 
 .links{
+    /* background-color: rgb(13, 255, 174); */
     padding: 4px, 122px, 4px, 122px;
-    margin-left: 70%;
-    width: Fixed 429px;
-    height: Hug 41px;
+    font-weight: 400px;
+    display: flex;
+    width: 738px;
+    height: 47px;
+    justify-content: space-around;
+    /* margin: 0 auto; */
+}
+
+.links :visited{
     color: black;
 }
 
-a{
-    margin-left: 16px;
-    width: 200px;
-    height: 33px;
+.links a{
+    color: black;
     font-size: 24px;
-}
-
-a:visited{
-    /* background-color: aquamarine; */
-    color: black;
+    width: 177px;
+    height: 44px;
+    /* background-color: blueviolet; */
+    text-align: center;
 }

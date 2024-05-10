@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Сторінка контактів
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('home.static', filename = 'home.css') }}">
+{% endblock %}
+
+{% block header %}
+    <div class = "links">
+        <a href = "/">HOME</a>
+        <a href = "/shop">SHOP</a>
+        <a href = "/basket">BASKET</a>
+        <a href = "/contacts">CONTACTS</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h1>CONTACTS PAGE</h1>
+{% endblock %}

@@ -1,0 +1,105 @@
+.product{
+    background-color: red;
+}
+
+.product img{
+    width: 251px;
+    height: 306px;
+    bottom: 8px;
+    right: 16px;
+}
+
+.info{
+    background-color: rgba(0, 255, 0, 0.158);
+    margin-left: 280px;
+    padding: 0px 29px 15px 29px;
+    display: flex;
+    position: absolute;
+}
+.available{
+    background-color: aquamarine;
+    /* margin-left: ; */
+}
+/* .buttons{
+    
+} */
+
+.buttons button{
+    background-color: white;
+    border-color: black;
+    border-radius: 20px;
+    border: solid 2px;
+}
+
+.buttons #chosen{
+    background-color: #EFCB4A;
+}
+
+.available img{
+    height: 200px;
+}
+
+.info h1{
+    font-size: 32px;
+    font-family: Inter;
+    width: 770px;
+    height: 34px;
+    font-weight: 700;
+    /* line-height: 29.05px; */
+    background-color: brown;
+}
+
+.info h2{
+    font-size: 32px;
+    font-family: Inter;
+    align-items: center;
+    font-weight: 700;
+    /* background-color: aqua; */
+    position: absolute;
+    text-align: center;
+    margin-top: 6%;
+}
+
+.info h2 span{
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 700;
+}
+
+.links{
+    /* background-color: rgb(13, 255, 174); */
+    padding: 4px, 122px, 4px, 122px;
+    font-weight: 400px;
+    display: flex;
+    width: 738px;
+    height: 47px;
+    justify-content: space-around;
+    /* margin: 0 auto; */
+}
+
+.links :visited{
+    color: black;
+}
+
+.links a{
+    color: black;
+    font-size: 24px;
+    width: 177px;
+    height: 44px;
+    /* background-color: blueviolet; */
+    text-align: center;
+}
+
+#buy{
+    line-height: 29.05px;
+    background-color: #EFCB4A;
+    align-items: center;
+    font: Inter;
+    width: 149px;
+    height: 55px;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: 10%;
+}
+

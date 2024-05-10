@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="{{ url_for('home.static', filename = 'home.css') }}">
 {% endblock %}
 
-{% block content %}
+{% block header %}
     <div class = "links">
-        <a href = "http://127.0.0.1:5000/registration">REGISTRATION</a>
-        <a href = "http://127.0.0.1:5000/authorization">AUTHORIZATION</a>
+        <a href = "/">HOME</a>
+        <a href = "/shop">SHOP</a>
+        <a href = "/basket">BASKET</a>
+        <a href = "/contacts">CONTACTS</a>
     </div>
+{% endblock %}
+
+
+{% block content %}
     <h1>HOME PAGE</h1>
 {% endblock %}
