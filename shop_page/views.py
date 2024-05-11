@@ -20,5 +20,8 @@ def show_shop_page():
             count = data["count"]        
         )
         DB.session.add(product)
-    DB.session.commit()
+    try:
+        DB.session.commit()
+    except:
+        return "Error"
     return flask.render_template(template_name_or_list = "shop.html", products = Product.query.all())

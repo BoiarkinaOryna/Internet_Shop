@@ -8,45 +8,53 @@
     <link rel="stylesheet" href="{{ url_for( 'shop_page.static', filename = 'shop.css')}}">
 {% endblock %}
 
-
-{% block header %}
-    <div class="links">
-        <a href = "/">HOME</a>
-        <a href = "/shop">SHOP</a>
-        <a href = "/basket">BASKET</a>
-        <a href = "/contacts">CONTACTS</a>
-    </div>
-{% endblock %}
+    
 
 {% block content %}
-    {% for product in products %}
-        <div class = "product">
 
-       
-            <div class = "info"> 
-                <h1>{{ product.name }}</h1>
-                <h2>{{ product.price }}</h2>
-                <button id = "buy">КУПИТИ</button>
-                <h3>Ємність</h3>
-                <div class = "buttons">
-
-                    {% for memory in ["32 Гб", "60 Гб", "128 Гб", "256 Гб", "512 Гб", "1 Тб"] %}
-                        {% if product.description == memory %}
-                            <button id = "chosen">{{ product.description }}</button>
-                        {% else %}
-                            <button>{{ memory }}</button>
-                        {% endif %}
-                    {% endfor %}
-                    
-                <div class = "available">
-                    <img src="{{ url_for( 'shop_page.static', filename = 'images/tick.png' )}}" alt="">
-                    <p>Товар в наявності</p>
-                </div>
-                </div>
-            </div>
-            <img src = "{{ url_for( 'shop_page.static', filename = 'images/samsung.jpeg' )}}" alt="">
+    <header>
+        <div class="links">
+            <a href = "/">HOME</a>
+            <a href = "/shop">SHOP</a>
+            <a href = "/basket">BASKET</a>
+            <a href = "/contacts">CONTACTS</a>
         </div>
-        {% endfor %}
+    </header>
 
+    <main>
+        {% for product in products %}
+            <div class = "product">
+
+        
+                <div class = "info"> 
+                    <h1>{{ product.name }}</h1>
+                    <h2>{{ product.price }}</h2>
+                    <button id = "buy">КУПИТИ</button>
+                    <h3>Ємність:</h3>
+  
+                    <div class = "available">
+
+                        <div class = "buttons">
+
+                            {% for memory in ["32 Гб", "60 Гб", "128 Гб", "256 Гб", "512 Гб", "1 Тб"] %}
+                                {% if product.description == memory %}
+                                    <button id = "chosen">{{ product.description }}</button>
+                                {% else %}
+                                    <button>{{ memory }}</button>
+                                {% endif %}
+                            {% endfor %}
+                        </div> 
+
+                        <p>Товар в наявності</p>
+                        <img src="{{ url_for( 'shop_page.static', filename = 'images/tick.png' )}}">
+                        
+                         
+
+                    </div>
+                </div>
+                <img src = "{{ url_for( 'shop_page.static', filename = 'images/samsung.jpeg' )}}">
+            </div>
+        {% endfor %}
+    </main>
 
 {% endblock %}
