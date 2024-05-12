@@ -168,3 +168,9 @@ main{
     margin-top: 10%;
 }
 
+.options{
+    text-decoration: none;
+}
+.active{
+    font-weight: bold;
+}

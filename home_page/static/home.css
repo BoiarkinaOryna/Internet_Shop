@@ -1,13 +1,10 @@
-h1{
-    /* background-color: brown; */
-    margin: 0 auto;
-    font-size: 100px;
-    /* font-family: Inter; */
-    font-weight: 400;
-    width: 831px;
-    height: 165px;
-    text-align: center;
-    margin-top: 18%;
+header{
+    /* background-color: aquamarine; */
+    width: Fixed (1,440px)px;
+    height: Fixed (80px)px;
+    padding: 17px 39px 17px 39px;
+    gap: 387px;
+    opacity: 0px;
 }
 
 .links{
@@ -32,4 +29,34 @@ h1{
     height: 44px;
     /* background-color: blueviolet; */
     text-align: center;
+}
+
+
+main{
+    width: Fixed (1,440px)px;
+    height: Fixed (1,203px)px;
+    top: 48px;
+    left: 1561px;
+    padding: 10px 10px 10px 39px;
+    gap: 10px;
+    opacity: 0px;
+}
+
+h1{
+    /* background-color: brown; */
+    margin: 0 auto;
+    font-size: 100px;
+    /* font-family: Inter; */
+    font-weight: 400;
+    width: 831px;
+    height: 165px;
+    text-align: center;
+    margin-top: 18%;
+}
+
+.options{
+    text-decoration: none;
+}
+.active{
+    font-weight: bold;
 }

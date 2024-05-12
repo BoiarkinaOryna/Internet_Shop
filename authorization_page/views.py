@@ -7,6 +7,8 @@ def show_authorization_page():
     print("User.query:", User.query.all())
     if flask.request.method == "POST":
         if flask_login.current_user.is_authenticated:
+            
+
             print("Ви вже авторизовані")
             return "Ви вже авторизовані"
         else:

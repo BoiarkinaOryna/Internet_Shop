@@ -8,16 +8,15 @@
     <link rel="stylesheet" href="{{ url_for('home.static', filename = 'home.css') }}">
 {% endblock %}
 
-{% block header %}
-    <div class = "links">
-        <a href = "/">HOME</a>
-        <a href = "/shop">SHOP</a>
-        <a href = "/basket">BASKET</a>
-        <a href = "/contacts">CONTACTS</a>
-    </div>
-{% endblock %}
-
-
 {% block content %}
+    <header>
+        <div class="links">
+            <a class = "options" href = "/">HOME</a>
+            <a class = "options" href = "/shop">SHOP</a>
+            <a class = "options" href = "/basket">BASKET</a>
+            <a class = "active" href = "/contacts">CONTACTS</a>
+        </div>
+    </header>
+
     <h1>CONTACTS PAGE</h1>
 {% endblock %}

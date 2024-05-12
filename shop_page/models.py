@@ -4,8 +4,8 @@ class Product(DB.Model):
     name = DB.Column(DB.String(20), nullable = False)
     price = DB.Column(DB.Integer, nullable = False)
     description = DB.Column(DB.Text, nullable = False)
-    # image = DB.Column(DB.String(100), nullable = False)
     count = DB.Column(DB.Integer, nullable = False)
+    # image = DB.Column(DB.String(100), nullable = False)
 
     def __repr__(self):
       return f"id Номер - {self.id}; Назва товару - {self.name}"

@@ -17,8 +17,11 @@ def show_shop_page():
             name = data["name"],
             price = data["price"],
             description = data["description"],
-            count = data["count"]        
+            count = data["count"]
+            # image = data["image"]      
         )
+        # print("            1:", DB.session.query(Product).filter_by(name = product.name), "\n", "                    2:", DB.session.query(Product))
+        # if not DB.session.query(Product).filter_by(name = data["name"]):
         DB.session.add(product)
     try:
         DB.session.commit()
