@@ -6,25 +6,27 @@ def show_shop_page():
 
     read_xlsx = pandas.read_excel(
         io = path_xlsx,
-        header = None,
-        names = ["name", "price", "description", "count"]
-    )   
-        
-
+        # header = None,
+        names = ["name", "price", "description", "count", "image"]
+    )
+    
     for row in read_xlsx.iterrows():
-        data = row[1]
+        row_data = row[1]
+        print("read_xlsx.iterrows() :", read_xlsx.iterrows())
+        print("row_data = ", row_data)
         product = Product(
-            name = data["name"],
-            price = data["price"],
-            description = data["description"],
-            count = data["count"]
-            # image = data["image"]      
+            name = row_data['name'],
+            price = row_data['price'],
+            description = row_data['description'],
+            count = row_data['count'],
+            image = row_data['image']
         )
-        # print("            1:", DB.session.query(Product).filter_by(name = product.name), "\n", "                    2:", DB.session.query(Product))
-        # if not DB.session.query(Product).filter_by(name = data["name"]):
         DB.session.add(product)
-    try:
-        DB.session.commit()
-    except:
-        return "Error"
-    return flask.render_template(template_name_or_list = "shop.html", products = Product.query.all())
+    # try:
+    DB.session.commit()
+    # except (OperationalError):
+    #     return "ERROR"
+
+    return flask.render_template(template_name_or_list = "shop.html", product = Product.query.all())
+
+    

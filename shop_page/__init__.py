@@ -1,2 +1,2 @@
 from .app import shop
-from .views import*
+from .views import *

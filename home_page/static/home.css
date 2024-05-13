@@ -42,7 +42,7 @@ main{
     opacity: 0px;
 }
 
-h1{
+main h1{
     /* background-color: brown; */
     margin: 0 auto;
     font-size: 100px;
@@ -59,4 +59,25 @@ h1{
 }
 .active{
     font-weight: bold;
+}
+
+.username{
+    /* background-color: aqua; */
+    width: 247px;
+    height: 44px;
+    gap: 0px;
+    opacity: 0px;
+    position: absolute;
+    left: 80%;
+    /* display: inline;
+    flex-direction: row; */
+    /* margin-bottom: 80%; */
+    /* z-index: 20%; */
+    top: 10px;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: right;
+
 }
