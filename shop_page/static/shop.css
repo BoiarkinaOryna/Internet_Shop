@@ -155,14 +155,20 @@ main{
 
 }
 
-#buy{
+.buy{
+
     line-height: 29.05px;
     background-color: #EFCB4A;
     align-items: center;
     font: Inter;
-    width: 149px;
+    width: 149px;font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: center;
     height: 55px;
     text-align: center;
+    border: solid 2px;
     border-radius: 10px;
     position: absolute;
     margin-top: 10%;
@@ -173,4 +179,38 @@ main{
 }
 .active{
     font-weight: bold;
+}
+#active-basket{
+    width: 28px;
+    height: 27px;
+    gap: 0px;
+    opacity: 0px;
+    border: 1px 0px 0px 0px;
+    border: 1px solid #000000;
+    background-color: #EFCB4A;
+    border-radius: 50%;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    text-align: center;
+    position: absolute;
+    margin-left: 300px;
+}
+
+.username{
+    /* background-color: aqua; */
+    width: 247px;
+    height: 44px;
+    gap: 0px;
+    opacity: 0px;
+    position: absolute;
+    left: 80%;
+    top: 10px;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: right;
+
 }

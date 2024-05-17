@@ -5,20 +5,25 @@
 {% endblock %}
 
 {% block link %}
-    <link rel="stylesheet" href="{{ url_for( 'shop_page.static', filename = 'shop.css')}}">
+    <link rel="stylesheet" href="{{ url_for('shop.static', filename = 'shop.css')}}">
 {% endblock %}
 
+<!-- {% block script %}  -->
     
+<!-- {% endblock %} -->
 
 {% block content %}
-
     <header>
         <div class="links">
             <a class = "options" href = "/">HOME</a>
             <a class = "active" href = "/shop">SHOP</a>
             <a class = "options" href = "/basket">BASKET</a>
+            <p class = "basket"></p>
             <a class = "options" href = "/contacts">CONTACTS</a>
         </div>
+        {% if current_user.is_authenticated %}
+            <h1 class = "username">{{ current_user.name }}</h1>
+        {% endif %}
     </header>
 
     <main>
@@ -29,7 +34,7 @@
                 <div class = "info"> 
                     <h1>{{ product.name }}</h1>
                     <h2>{{ product.price }}</h2>
-                    <button id = "buy">КУПИТИ</button>
+                    <button class = "buy" id = "{{ product.id }}">КУПИТИ</button>
                     <h3>Ємність:</h3>
   
                     <div class = "available">
@@ -46,14 +51,16 @@
                         </div> 
 
                         <p>Товар в наявності</p>
-                        <img src="{{ url_for( 'shop_page.static', filename = 'images/tick.png' )}}">
+                        <img src="{{ url_for( 'shop.static', filename = 'images/tick.png' )}}">
                         
                          
 
                     </div>
                 </div>
-                <img src = "{{ url_for( 'shop_page.static', filename = 'images/samsung.jpeg' )}}">
+                <img src = "{{ url_for( 'shop.static', filename = 'images/' + product.image ) }}">
             </div>
+            <script src = "{{ url_for('shop.static', filename = 'js/shop.js')}}" defer></script>
+
         {% endfor %}
     </main>
 

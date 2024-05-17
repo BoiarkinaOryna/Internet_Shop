@@ -16,7 +16,11 @@
             <a class = "options" href = "/basket">BASKET</a>
             <a class = "active" href = "/contacts">CONTACTS</a>
         </div>
+        {% if current_user.is_authenticated %}
+            <h1 class = "username">{{ current_user.name }}</h1>
+        {% endif %}
     </header>
 
-    <h1>CONTACTS PAGE</h1>
+    <main><h1>CONTACTS PAGE</h1></main>
+    
 {% endblock %}

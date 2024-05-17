@@ -26,6 +26,8 @@ def show_registration_page():
             try:
                 DB.session.add(users)
                 DB.session.commit()
+                return flask.redirect("/authorization")
+                
             except:
                 return "ERROR"
             else:

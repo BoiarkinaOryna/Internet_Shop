@@ -33,3 +33,19 @@ h1{
     /* background-color: blueviolet; */
     text-align: center;
 }
+.username{
+    /* background-color: aqua; */
+    width: 247px;
+    height: 44px;
+    gap: 0px;
+    opacity: 0px;
+    position: absolute;
+    left: 80%;
+    top: 10px;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: right;
+
+}
