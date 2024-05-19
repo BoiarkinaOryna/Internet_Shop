@@ -8,4 +8,4 @@ class Product(DB.Model):
     image = DB.Column(DB.String(100), nullable = False)
 
     def __repr__(self):
-      return f"id Номер - {self.id}; Назва товару - {self.name}"
+      return f"id - {self.id}; Назва товару - {self.name}"

@@ -30,9 +30,9 @@ for (let count = 0; count < allButtons.length; count++){
             let countProduct = removeDuplicates(chosenId)
             // console.log("countProduct.length = ", countProduct.length)
             // console.log("countProduct =", countProduct)
-            let round = document.querySelector(".basket")
+            let round = document.querySelector(".cart")
             round.innerText = countProduct.length
-            round.id = "active-basket"
+            round.id = "active-cart"
         }
     )
 }

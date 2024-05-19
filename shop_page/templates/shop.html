@@ -17,8 +17,8 @@
         <div class="links">
             <a class = "options" href = "/">HOME</a>
             <a class = "active" href = "/shop">SHOP</a>
-            <a class = "options" href = "/basket">BASKET</a>
-            <p class = "basket"></p>
+            <a class = "options" href = "/cart">CART</a>
+            <p class = "cart"></p>
             <a class = "options" href = "/contacts">CONTACTS</a>
         </div>
         {% if current_user.is_authenticated %}
@@ -43,9 +43,9 @@
 
                             {% for memory in ["32 Гб", "60 Гб", "128 Гб", "256 Гб", "512 Гб", "1 Тб"] %}
                                 {% if product.description == memory %}
-                                    <button id = "chosen">{{ product.description }}</button>
+                                    <button class = "chosen">{{ product.description }}</button>
                                 {% else %}
-                                    <button>{{ memory }}</button>
+                                    <button class = "unchosen">{{ memory }}</button>
                                 {% endif %}
                             {% endfor %}
                         </div> 

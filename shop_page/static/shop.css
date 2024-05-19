@@ -88,15 +88,20 @@ main{
     /* background-color: antiquewhite; */
 }
 
-.buttons button{
+.buttons .unchosen{
     background-color: white;
     border-color: black;
     border-radius: 20px;
     border: solid 2px;
+    cursor: pointer
 }
 
-.buttons #chosen{
+.buttons .chosen{
     background-color: #EFCB4A;
+    border-color: black;
+    border-radius: 20px;
+    border: solid 2px;
+    cursor: pointer
 }
 
 .available img{
@@ -156,7 +161,6 @@ main{
 }
 
 .buy{
-
     line-height: 29.05px;
     background-color: #EFCB4A;
     align-items: center;
@@ -212,5 +216,4 @@ main{
     font-weight: 700;
     line-height: 29.05px;
     text-align: right;
-
 }
