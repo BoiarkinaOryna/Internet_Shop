@@ -7,7 +7,7 @@ def show_shop_page():
     read_xlsx = pandas.read_excel(
         io = path_xlsx,
         header = None,
-        names = ["name", "price", "description", "count", "image"]
+        names = ["name", "price", "description", "count", "image", "discount"]
     )
 
     Product.query.delete()
@@ -20,7 +20,8 @@ def show_shop_page():
             price = row_data['price'],
             description = row_data['description'],
             count = row_data['count'],
-            image = row_data['image']
+            image = row_data['image'],
+            discount = row_data["discount"]
         )
         print("product =", product)
         DB.session.add(product)
@@ -31,5 +32,3 @@ def show_shop_page():
         template_name_or_list = "shop.html",
         products = Product.query.all()
     )
-
-    

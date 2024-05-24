@@ -14,13 +14,13 @@ for (let count = 0; count < allButtons.length; count++){
         listener = function(){
             console.log("button.id =", button.id);
             if (document.cookie == ''){
-                document.cookie = `product = ${button.id}; path = /`
+                document.cookie = `products = ${button.id}; path = /`
                 // countProduct++
                 chosenId.push(button.id)
             }else{
                 currentCookie = document.cookie.split('=')[1]
                 
-                document.cookie = `product = ${currentCookie} ${button.id}; path = /`
+                document.cookie = `products = ${currentCookie} ${button.id}; path = /`
 
                 // countProduct++
                 chosenId.push(button.id)

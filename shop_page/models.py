@@ -6,6 +6,7 @@ class Product(DB.Model):
     description = DB.Column(DB.Text, nullable = False)
     count = DB.Column(DB.Integer, nullable = False)
     image = DB.Column(DB.String(100), nullable = False)
+    discount = DB.Column(DB.Integer, nullable = False)
 
     def __repr__(self):
       return f"id - {self.id}; Назва товару - {self.name}"
