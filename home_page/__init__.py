@@ -1,2 +1,2 @@
 from .app import home
-from .views import show_home_page
+from .views import render_home_page

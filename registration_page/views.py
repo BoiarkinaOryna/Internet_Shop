@@ -3,7 +3,7 @@ from .models import User
 from project.settings import DB
 from project.settings import shop
 
-def show_registration_page():
+def render_registration_page():
     print("User.query in reg: ", User.query.all())
     print("flask.request.method =", flask.request.method)
     if flask.request.method == "POST":

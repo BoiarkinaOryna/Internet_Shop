@@ -157,13 +157,19 @@ main{
     left: 12%;
 }
 
+.invisible{
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+}
+
 .order{
     right: 10%;
     top: 10%;
     position: absolute;
 }
 .checkout{
-    width: 374px;
+    width: 450px;
     height: 104px;
     padding: 10px 0px 0px 0px;
     gap: 10px;
@@ -197,7 +203,7 @@ main{
     text-align: left;
 }
 .order .calculation h3{
-    width: 156px;
+    width: 220px;
     height: 44px;
     font-family: Inter;
     font-size: 22px;
@@ -208,6 +214,7 @@ main{
     top: 47%;
     right: 2%;
     position: absolute;
+    text-align: center;
 }
 
 .order .calculation h5{
@@ -219,7 +226,7 @@ main{
     line-height: 21.78px;
     text-align: left;  
     top: 15%;
-    right: 5%;  
+    right: 5%;     
 }
 
 .order .calculation h4{
@@ -235,16 +242,16 @@ main{
         
 }
 .order .calculation p{
-    width: 156px;
+    width: 220px;
     height: 44px;
     font-family: Inter;
     font-size: 24px;
     font-weight: 800;
     line-height: 29.05px;
-    text-align: right;
     position: absolute; 
     top: 85%;
     right: 2%;
+    text-align: center;
 }
 
 .order .calculation h2{
@@ -254,9 +261,10 @@ main{
     font-weight: 700;
     line-height: 26.63px;
     text-align: right;
-    width: 156px;
+    width: 220px;
     height: 44px;
     position: absolute;
     top: 65%;
-    right: 2%
+    right: 2%;
+    text-align: center;
 }

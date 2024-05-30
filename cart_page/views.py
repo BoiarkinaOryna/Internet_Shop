@@ -1,7 +1,7 @@
 import flask
 from shop_page.models import Product
 
-def show_cart_page():
+def render_cart_page():
     list_products = []
     repeat_id = []
     products_quantity = {}

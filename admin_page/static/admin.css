@@ -60,7 +60,7 @@ main{
 
 .info{
     /* background-color: rgba(0, 255, 0, 0.158); */
-    margin-left: 280px;
+    margin-left: 300px;
     display: flex;
     position: absolute;
     width: 1105px;
@@ -94,7 +94,9 @@ main{
     border-color: black;
     border-radius: 20px;
     border: solid 2px;
-    cursor: pointer
+    cursor: pointer;
+    position: relative;
+    top: -12px;
 }
 
 .buttons .chosen{
@@ -102,7 +104,20 @@ main{
     border-color: black;
     border-radius: 20px;
     border: solid 2px;
-    cursor: pointer
+    cursor: pointer;
+    position: relative;
+    top: -12px;
+}
+
+.available .buttons .pencil{
+    /* position: absolute; */
+    display: inline-block;
+    /* right: 5px; */
+}
+
+.available .buttons .pencil .description{
+    /* position: absolute; */
+    display: inline-block;
 }
 
 .available img{
@@ -114,7 +129,7 @@ main{
     margin-left: 40%;
 }
 
-.available p{
+.available .in-stock{
     width: 183px;
     height: 28px;
     gap: 0px;
@@ -159,7 +174,7 @@ main{
     height: 36px;
     gap: 0px;
     opacity: 0px;
-
+    margin-bottom: 0px;
 }
 
 .info h4{
@@ -241,4 +256,61 @@ main{
     top: 26%;
     font-family: Inter;
     font-size: 24px;
+}
+
+/* .buttons .pencil{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 20%;
+    right: 110%;
+} */
+
+.image, .info .pencil{
+    width: 30px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color:#D1D8DB;
+    text-align: center;
+    position: relative;
+    margin: 0;
+}
+
+.pencil .price{
+    width: 15px;
+    height: 15px;
+    top: 7px;
+    left: -100px;  
+}
+.info .pencil-name{
+    background-color: #000000;
+    left: 100px;
+}
+.pencil .name{
+    /* background-color: #000000; */
+    width: 15px;
+    height: 15px;
+    top: 7px;
+    left: 7.px;
+    gap: 0px;
+    opacity: 0px;
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.pencil .description{
+    width: 15px;
+    height: 15px;
+    top: 7px;
+    left: 7.5px;
+}
+.pencil .image{
+    /* width: 15px;
+    height: 15px; */
+    position: relative;
+    left: 270px;
+    top: -220px;
+    border: 3px solid black;
 }

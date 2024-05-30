@@ -1,7 +1,7 @@
 import flask, pandas, os
 from project.settings import DB
 from .models import Product
-def show_shop_page():
+def render_shop_page():
     path_xlsx = os.path.abspath(__file__  + "/../phones_flask_project.xlsx")
 
     read_xlsx = pandas.read_excel(

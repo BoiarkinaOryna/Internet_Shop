@@ -1,2 +1,2 @@
 from .app import registr
-from .views import show_registration_page
+from .views import render_registration_page

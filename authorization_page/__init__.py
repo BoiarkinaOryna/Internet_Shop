@@ -1,2 +1,2 @@
 from .app import auth 
-from .views import show_authorization_page
+from .views import render_authorization_page

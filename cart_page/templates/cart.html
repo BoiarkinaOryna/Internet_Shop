@@ -17,6 +17,7 @@
             <a class = "options" href = "/shop">SHOP</a>
             <a class = "active" href = "/cart">CART</a>
             <a class = "options" href = "/contacts">CONTACTS</a>
+            <a class = "options" href = "/admin">ADMIN</a>
         </div>
         
         {% if current_user.is_authenticated %}
@@ -28,7 +29,7 @@
         <!-- <h1>CART</h1> -->
         {% for product in products %}
             <div class = "products", id = "{{ product.id }}">
-                <h2 class = "product-price" id = "{{ product.id }}">{{ product.price }}</h2>
+                <h2 class = "product-price" id = "{{ product.id }}">{{ product.price - (product.price / 100 * product.discount) }} грн</h2>
                 <button class = "delete" id = "{{ product.id }}">🗑️</button>
                 <button class = "minus" id = "{{ product.id }}">-</button>   
                 <h3 class = "product_quantity" id = "quantity {{ product.id }}">{{ quantity[product.id | string] }}</h3>
@@ -36,7 +37,7 @@
                 
                 <h1 class = " name" id = "{{ product.name }}">{{ product.name }}</h1>
                 <img class = "images" src="{{ url_for('cart.static', filename = 'images/' + product.image) }}" alt="">
-                <!-- <h1>{{ product.id }}</h1> -->
+                <h1 class = "invisible", id = "{{ product.id }}">{{ product.price }}</h1>
            </div>
     
         {% endfor %}
@@ -48,7 +49,7 @@
             </div>
             <div class = "calculation">
                 <h5 class = "price">Знижка</h5>
-                <h2 class = "price">25459 грн</h2>
+                <h2 class = "price", id = "total-discount">грн</h2>
             </div>
             <div class = "calculation">
                 <h4 class = "total amount">Загальна сума</h4>

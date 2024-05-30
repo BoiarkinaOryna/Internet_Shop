@@ -1,2 +1,2 @@
 from .app import cart
-from .views import show_cart_page
+from .views import render_cart_page

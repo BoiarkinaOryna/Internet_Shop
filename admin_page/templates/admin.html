@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block link %}
-    <link rel="stylesheet" href="{{ url_for('shop.static', filename = 'shop.css')}}">
+    <link rel="stylesheet" href="{{ url_for('admin.static', filename = 'admin.css')}}">
 {% endblock %}
 
 <!-- {% block script %}  -->
@@ -16,11 +16,10 @@
     <header>
         <div class="links">
             <a class = "options" href = "/">HOME</a>
-            <a class = "active" href = "/shop">SHOP</a>
+            <a class = "options" href = "/shop">SHOP</a>
             <a class = "options" href = "/cart">CART</a>
-            <p class = "cart"></p>
             <a class = "options" href = "/contacts">CONTACTS</a>
-            <a class = "options" href = "/admin">ADMIN</a>
+            <a class = "active" href = "/admin">ADMIN</a>
         </div>
         {% if current_user.is_authenticated %}
             <h1 class = "username">{{ current_user.name }}</h1>
@@ -30,13 +29,22 @@
     <main>
         {% for product in products %}
             <div class = "product">
-
         
                 <div class = "info"> 
                     <h1>{{ product.name }}</h1>
+                    <div class="pencil-name">
+                        <p class="name">✏</p>
+                    </div>
                     <h2>{{ product.price }} грн</h2>
+                    <div class="pencil-price">
+                        <p class="price">✏</p>
+                    </div>
                     <h4>Знижка {{ product.discount }}%</h4>
+                    <div class="pencil-discount">
+                        <p class="discount">✏</p>
+                    </div>
                     <h5>{{ product.price - (product.price / 100 * product.discount) }} грн</h5>
+
                     <button class = "buy" id = "{{ product.id }}">КУПИТИ</button>
                     <h3>Ємність:</h3>
   
@@ -47,23 +55,36 @@
                             {% for memory in ["32 Гб", "60 Гб", "128 Гб", "256 Гб", "512 Гб", "1 Тб"] %}
                                 {% if product.description == memory %}
                                     <button class = "chosen">{{ product.description }}</button>
+                                    <div class="pencil">
+                                        <p class="description">✏</p>
+                                    </div>
                                 {% else %}
                                     <button class = "unchosen">{{ memory }}</button>
+                                    <div class="pencil">
+                                        <p class="description">✏</p>
+                                    </div>
                                 {% endif %}
+                                
                             {% endfor %}
+                            
                         </div> 
 
-                        <p>Товар в наявності</p>
-                        <img src="{{ url_for( 'shop.static', filename = 'images/tick.png' )}}">
+                        <p class="in-stock">Товар в наявності</p>
+                        <img src="{{ url_for( 'admin.static', filename = 'images/tick.png' )}}">
                         
                          
 
                     </div>
                 </div>
-                <img src = "{{ url_for( 'shop.static', filename = 'images/' + product.image ) }}">
+                <img src = "{{ url_for( 'admin.static', filename = 'images/' + product.image ) }}">
             </div>
-            <script src = "{{ url_for('shop.static', filename = 'js/shop.js')}}" defer></script>
-
+            <script src = "{{ url_for('admin.static', filename = 'js/shop.js')}}" defer></script>
+            <div class="pencil">
+                <p class="image">✏</p>
+            </div> 
+            <form method="post" class="form">
+                <button name = "del" value = "{{product.id}}">del</button>   
+            <form>
         {% endfor %}
     </main>
 

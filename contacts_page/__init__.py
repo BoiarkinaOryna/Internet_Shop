@@ -1,2 +1,2 @@
 from .app import contacts
-from .views import show_contacts_page
+from .views import render_contacts_page
