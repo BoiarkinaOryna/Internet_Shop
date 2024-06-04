@@ -5,7 +5,7 @@ from project.settings import DB
 from flask_login import current_user
 
 def render_authorization_page():
-    print("User.query:", User.query.all())
+    # print("User.query:", User.query.all())
     if flask.request.method == "POST":
         # if flask_login.current_user.is_authenticated:
             

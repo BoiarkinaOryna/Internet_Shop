@@ -4,10 +4,10 @@ from project.settings import DB
 from project.settings import shop
 
 def render_registration_page():
-    print("User.query in reg: ", User.query.all())
-    print("flask.request.method =", flask.request.method)
+    # print("User.query in reg: ", User.query.all())
+    # print("flask.request.method =", flask.request.method)
     if flask.request.method == "POST":
-        print("Post")
+        # print("Post")
         if flask.request.form['password1'] == flask.request.form['password2']:   
             users = User( 
                 name = flask.request.form['name'],
@@ -16,7 +16,7 @@ def render_registration_page():
                 password_confirmation = flask.request.form["password2"]
             )
             if flask_login.current_user.is_authenticated:
-                print("Ви вже авторизовані")
+                # print("Ви вже авторизовані")
                 return "Ви вже авторизовані"
             else:
                 for user in User.query.filter_by(name = flask.request.form['name']):

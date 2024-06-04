@@ -14,11 +14,13 @@ def render_admin_page():
                 )
                 DB.session.add(product)
                 DB.session.commit()
+
                 image = flask.request.files["image"]
                 image.save(os.path.abspath(__file__ + f"/../../shop_page/static/images/{product.name}.jpg"))
             else:
                 product_id = int(flask.request.form["del"])
                 product_del = Product.query.get(product_id)
+                # print("product_del:", product_del)
                 if Product.query.get(product_id):
                     DB.session.delete(product_del)
                     DB.session.commit()

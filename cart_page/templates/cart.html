@@ -36,7 +36,7 @@
                 <button class = "plus" id = "{{ product.id }}">+</button>
                 
                 <h1 class = " name" id = "{{ product.name }}">{{ product.name }}</h1>
-                <img class = "images" src="{{ url_for('cart.static', filename = 'images/' + product.image) }}" alt="">
+                <img class = "images" src="{{ url_for('shop.static', filename = 'images/' + product.image) }}" alt="">
                 <h1 class = "invisible", id = "{{ product.id }}">{{ product.price }}</h1>
            </div>
     

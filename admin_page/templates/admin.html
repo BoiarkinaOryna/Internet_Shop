@@ -31,18 +31,18 @@
             <div class = "product">
         
                 <div class = "info"> 
-                    <h1>{{ product.name }}</h1>
-                    <div class="pencil-name">
+                    <h1 id = "name-{{ product.id }}">{{ product.name }}</h1>
+                    <button class="pencil-name" id = "{{ product.id }}">
                         <p class="name">✏</p>
-                    </div>
-                    <h2>{{ product.price }} грн</h2>
-                    <div class="pencil-price">
+                    </button>
+                    <h2 id = "price-{{ product.id }}">{{ product.price }} грн</h2>
+                    <button class="pencil-price" id = "{{ product.id }}">
                         <p class="price">✏</p>
-                    </div>
-                    <h4>Знижка {{ product.discount }}%</h4>
-                    <div class="pencil-discount">
+                    </button>
+                    <h4 id = "discount-{{ product.id }}">Знижка {{ product.discount }}%</h4>
+                    <button class="pencil-discount" id = "{{ product.id }}">
                         <p class="discount">✏</p>
-                    </div>
+                    </button>
                     <h5>{{ product.price - (product.price / 100 * product.discount) }} грн</h5>
 
                     <button class = "buy" id = "{{ product.id }}">КУПИТИ</button>
@@ -55,14 +55,14 @@
                             {% for memory in ["32 Гб", "60 Гб", "128 Гб", "256 Гб", "512 Гб", "1 Тб"] %}
                                 {% if product.description == memory %}
                                     <button class = "chosen">{{ product.description }}</button>
-                                    <div class="pencil">
+                                    <button class="pencil-description" id = "{{ product.id }}">
                                         <p class="description">✏</p>
-                                    </div>
+                                    </button>
                                 {% else %}
                                     <button class = "unchosen">{{ memory }}</button>
-                                    <div class="pencil">
+                                    <button class="pencil-description" id = "{{ product.id }}">
                                         <p class="description">✏</p>
-                                    </div>
+                                    </button>
                                 {% endif %}
                                 
                             {% endfor %}
@@ -70,18 +70,18 @@
                         </div> 
 
                         <p class="in-stock">Товар в наявності</p>
-                        <img src="{{ url_for( 'admin.static', filename = 'images/tick.png' )}}">
+                        <img src="{{ url_for( 'shop.static', filename = 'images/tick.png' )}}">
                         
                          
 
                     </div>
                 </div>
-                <img src = "{{ url_for( 'admin.static', filename = 'images/' + product.image ) }}">
+                <img src = "{{ url_for( 'shop.static', filename = 'images/' + product.image ) }}">
             </div>
-            <script src = "{{ url_for('admin.static', filename = 'js/shop.js')}}" defer></script>
-            <div class="pencil">
+            <script src = "{{ url_for('admin.static', filename = 'js/admin_copy.js')}}" defer></script>
+            <button class="pencil-image" id = "{{ product.id }}">
                 <p class="image">✏</p>
-            </div> 
+            </button> 
             <form method="post" class="form">
                 <button name = "del" value = "{{product.id}}">del</button>   
             <form>
