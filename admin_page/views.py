@@ -3,8 +3,11 @@ from shop_page.models import Product
 from project.settings import DB
 def render_admin_page():
     if flask.request.method == "POST":
+        print("flask.request.form.get('change-name') =", flask.request.form.get("change-name"))
         try:
-            if flask.request.form.get("del") == None:
+            if flask.request.form["change"]:
+                pass
+            elif flask.request.form.get("del") == None:
                 product = Product(
                     name = flask.request.form["name"],
                     description = flask.request.form["description"],
@@ -25,6 +28,8 @@ def render_admin_page():
                     DB.session.delete(product_del)
                     DB.session.commit()
                     os.remove(os.path.abspath(__file__ + f"/../../shop_page/static/images/{product_del.name}.jpg"))
+                
+        
         except Exception as e:
             print(e)
         

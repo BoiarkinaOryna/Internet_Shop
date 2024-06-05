@@ -3,7 +3,7 @@ let listPencilDiscount = document.querySelectorAll(".pencil-discount")
 let listPencilPrice = document.querySelectorAll(".pencil-price")
 let listPencilDescription = document.querySelectorAll(".pencil-description")
 let listPencilImage= document.querySelectorAll(".pencil-image")
-
+let form = document.querySelector(".form")
 
 function addListButton(classList, element) {
   for (let i = 0; i < classList.length; i++) {
@@ -46,10 +46,14 @@ function ChangeButton(event, element, index){
   input.id = idPencil
   console.log(input)
   let button = document.createElement("button")
+  button.name = `change-${element}`
+  button.type = "submit"
+  button.value = "button-value"
+  button.method = 'POST'
   button.textContent = "OK"
   button.id = idPencil
   button.classList.add(`${element}-button`)
-  document.body.append(input, button)
+  form.append(input, button)
   console.log(button)
   button.addEventListener(
       type = "click",
@@ -57,6 +61,7 @@ function ChangeButton(event, element, index){
           let newValue = input.value
           let elementValue = document.getElementById(`${element}-${idPencil}`)
           console.log(elementValue, `${element}-${idPencil}`)
+          button.value = newValue
           // elementValue.textContent = newValue
           // console.log(newValue)
           // input.remove()
@@ -75,6 +80,3 @@ function ChangeButton(event, element, index){
       }
   )
 }
-
-
-
