@@ -14,7 +14,7 @@ cart_page.cart.add_url_rule(rule = "/cart", view_func = cart_page.render_cart_pa
 
 contacts_page.contacts.add_url_rule(rule = "/contacts", view_func = contacts_page.render_contacts_page, methods = ["POST", "GET"])
 
-admin_page.admin.add_url_rule(rule = "/admin", view_func = admin_page.render_admin_page, methods = ["POST", "GET"])
+admin_page.admin.add_url_rule(rule = "/admin/", view_func = admin_page.render_admin_page, methods = ["POST", "GET"])
 
 # print("register blueprint")
 shop.register_blueprint(blueprint = home_page.home)

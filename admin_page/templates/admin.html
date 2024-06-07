@@ -82,10 +82,15 @@
             <button class="pencil-image" id = "{{ product.id }}">
                 <p class="image">✏</p>
             </button> 
-            <form method="post" class="form">
+            <form method="post" class="form-del">
                 <button name = "del" value = "{{product.id}}">del</button>   
-            <form>
+            </form>
         {% endfor %}
+        <div class = 'modal-window' style = 'display: none;'>
+            <form method="post" class="form">  
+                <button name="change" type="submit" value="button-value" class="name-button">OK</button>
+            </form>
+        </div>
     </main>
 
 {% endblock %}

@@ -328,68 +328,34 @@ main{
     border: 3px solid black;
 }
 
-.price-input{
-    position: absolute;
-    top: 190px;
-    border: 3px solid black;
-    left: 380px;
-    width: 150px;
-    height: 30px;
-    border: 3px solid;
-    border-radius: 10px;
-}
-.price-button{
-    position: absolute;
-    border: 3px solid black;
-    width: 35px;
-    height: 35px;
-    border: 3px solid;
-    border-radius: 10px;
-    background-color: #EFCB4A;
-    left: 560px;  
-    top: 180px;
+.modal-window{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
-.name-input{
-    position: absolute;
-    top: 140px;
+.form{
+    position: relative;
+    display: flex;
+    width: 400px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     border: 3px solid black;
-    left: 380px;
-    width: 900px;
-    height: 40px;
-    border: 3px solid;
     border-radius: 10px;
+    background-color: white;
 }
-.name-button{
-    position: absolute;
-    top: 140px;
-    border: 3px solid black;
-    left: 1400px;
-    width: 50px;
-    height: 50px;
-    border: 3px solid;
-    border-radius: 10px;
-    background-color: #EFCB4A;
+.form *{
+    margin: 10px;
 }
 
-.discount-input{
-    position: absolute;
-    border: 3px solid black;
-    left: 380px;
-    width: 150px;
-    height: 30px;
-    top: 222px;
-    border: 3px solid;
-    border-radius: 10px;
-}
-.discount-button{
-    position: absolute;
-    top: 220px;
-    border: 3px solid black;
-    left: 560px;
-    width: 35px;
-    height: 35px;
-    border: 3px solid;
-    border-radius: 10px;
-    background-color: #EFCB4A;
+.label, .input-data{
+    width: 300px;
+    text-align: left;
 }
