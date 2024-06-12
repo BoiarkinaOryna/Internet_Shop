@@ -68,27 +68,27 @@
                             {% endfor %}
                             
                         </div> 
-
-                        <p class="in-stock">Товар в наявності</p>
-                        <img src="{{ url_for( 'shop.static', filename = 'images/tick.png' )}}">
+                        <form method="post" class="form-del">
+                            <button style="margin-top: 42px; margin-left: 780px; background-color: transparent; border: 0" class="button-del" name = "del" value = "{{product.id}}"></button>
+                        </form>
                         
-                         
-
+                        <p class="in-stock">Видалити товар</p>
+                        <img src="{{ url_for( 'shop.static', filename = 'images/trash.png' )}}">
+                        
                     </div>
                 </div>
                 <img src = "{{ url_for( 'shop.static', filename = 'images/' + product.image ) }}">
             </div>
             <script src = "{{ url_for('admin.static', filename = 'js/admin.js')}}" defer></script>
-            <button class="pencil-image" id = "{{ product.id }}">
+            <button style = "background-color: transparent; border: 0" class="pencil-image" id = "{{ product.id }}">
                 <p class="image">✏</p>
             </button> 
-            <form method="post" class="form-del">
-                <button name = "del" value = "{{product.id}}">del</button>   
-            </form>
         {% endfor %}
         <div class = 'modal-window' style = 'display: none;'>
-            <form method="post" class="form">  
-                <button name="change" type="submit" value="button-value" class="name-button">OK</button>
+            <form method="post" class="form"> 
+                <p class="modal-text">CHANGE TEXT:</p>
+                <input class = "modal-input" type="" accept="" enctype = ''>
+                <button name="change" type="submit" value="button-value" class="name-button">SEND</button>
             </form>
         </div>
     </main>

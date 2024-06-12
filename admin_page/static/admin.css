@@ -33,8 +33,8 @@ header{
 
 
 main{
-    width: Fixed (1,440px)px;
-    height: Fixed (1,203px)px;
+    /* width: 1440px;
+    height: 1203px; */
     top: 48px;
     left: 1561px;
     padding: 10px 10px 10px 39px;
@@ -43,12 +43,15 @@ main{
 }
 
 .product{
+    /* position: static; */
     width: 1350px;
-    /* height: 1089px; */
+    height: 321px;
     padding: 31px 15px 31px 15px;
     gap: 10px;
     opacity: 0px;
     /* background-color: red; */
+    margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .product img{
@@ -63,8 +66,8 @@ main{
     margin-left: 300px;
     display: flex;
     position: absolute;
-    width: 1105px;
-    height: 291px;
+    width: 965px;
+    height: 341px;
     padding: 0px 29px 15px 29px;
     gap: 15px;
     border-right: solid 2px;
@@ -86,7 +89,7 @@ main{
 .buttons{
     position: absolute;
     /* background-color: antiquewhite; */
-    top: 75%;
+    top: 90px;
 }
 
 .buttons .unchosen{
@@ -120,13 +123,14 @@ main{
     display: inline-block;
 }
 
-.available img{
+.available img, .form-del .button-del{
     width: 38.12px;
     height: 36px;
     gap: 0px;
     opacity: 0px;
-    position: absolute;
-    margin-left: 40%;
+    /* position: absolute; */
+    margin-top: -50px;
+    margin-left: 82%;
 }
 
 .available .in-stock{
@@ -139,7 +143,8 @@ main{
     font-weight: 700;
     line-height: 19.36px;
     text-align: center;
-    margin-left: 98%;
+    margin-left: 85%;
+    margin-top: 50px;
 }
 
 .info h1{
@@ -165,7 +170,7 @@ main{
 
 .info h3{
     position: absolute;
-    margin-top: 20%;
+    margin-top: 23%;
     font-family: Inter;
     font-size: 24px;
     font-weight: 700;
@@ -286,7 +291,7 @@ main{
 
 .pencil-name{
     position: absolute;
-    left: 1050px;  
+    left: 930px;  
     top: 25px;
 }
 
@@ -304,25 +309,10 @@ main{
     left: 200px;  
     top: 53px;
 }
-/* .info .pencil-name{
-    background-color: #000000;
-    left: 100px;
-} */
-/* .pencil .pencil-name{
-    background-color: #000000;
-    width: 15px;
-    height: 15px;
-    top: 7px;
-    left: 7.px;
-    gap: 0px;
-    opacity: 0px;
-    position: absolute;
-    margin: 0 auto;
-    margin-top: 100px;
-} */
 
 .pencil .image{
-    position: relative;
+    position: absolute;
+    /* position: relative; */
     left: 270px;
     top: -220px;
     border: 3px solid black;
@@ -358,4 +348,56 @@ main{
 .label, .input-data{
     width: 300px;
     text-align: left;
+}
+/* .modal-input{
+    width: 450px;
+    height: 74px;
+    top: 139.5px;
+    left: 125px;
+    gap: 0px;
+    border-radius: 15px 0px 0px 0px;
+    border: 2px 0px 0px 0px;
+    opacity: 0px;
+
+    } */
+
+.name-button{
+    width: 446px;
+    height: 51px;
+    font: Inter 25px;
+    background-color: white;
+    border: none;
+    text-decoration: underline;
+}
+
+.modal-text{
+    width: 446px;
+    height: 30px;
+    top: 89.5px;
+    left: 127px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30.26px;
+    text-align: left;        
+}
+
+/* .form{
+    width: 450px;
+    height: 124px;
+    gap: 0px;
+    border-radius: 15px 0px 0px 0px;
+    opacity: 0px;    
+} */
+
+.form-del{
+    position: absolute;
+}
+
+.pencil-image{
+    position: absolute;
+    margin-top: -250px;
+    margin-left: 375px;
 }

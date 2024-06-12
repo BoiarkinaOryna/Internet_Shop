@@ -7,18 +7,20 @@ def render_admin_page():
         try:
             print(flask.request.form.get("del"))
             if flask.request.form.get("change"):
-                new_value = flask.request.form.get("change")
-                print("new_value.split[-1] = ",new_value.split("^")[2])
-                print("new_value.split('^') = ", new_value.split("^"))
-                product = Product.query.get(new_value.split("^")[1])
+                list_new_value = flask.request.form.get("change").split("^")
+                # print("new_value.split[-1] = ",list_new_value[2])
+                print("new_value.split('^') = ", list_new_value)
+                product = Product.query.get(list_new_value[1])
                 print(product)
-                # new_value.split("^")[2]
-                if new_value.split("^")[-1] == "name":
-                    product.name = new_value.split("^")[0]
-                if new_value.split("^")[-1] == "price":
-                    product.price = new_value.split("^")[0]
-                if new_value.split("^")[-1] == "discount":
-                    product.discount = new_value.split("^")[0]
+                if len(list_new_value) == 2:
+                    product.image = list_new_value[0]
+                elif list_new_value[-1] == "name":
+                    product.name = list_new_value[0]
+                elif list_new_value[-1] == "price":
+                    product.price = list_new_value[0]
+                elif list_new_value[-1] == "discount":
+                    product.discount = list_new_value[0]
+                
                 DB.session.commit()
                 
                 

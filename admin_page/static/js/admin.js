@@ -39,12 +39,12 @@ function ChangeButton(event, element, index){
 
   idPencil = listButtonPencil[index].id
   console.log(listButtonPencil[index].id)
-  let input = document.createElement("input")
-  input.classList.add(`${element}-input`)
+  let input = document.querySelector(".modal-input")
+  input.type = 'text'
   input.id = idPencil
   console.log(input)
   console.log(myForm)
-  myForm.append(input)
+  // myForm.append(input)
   document.querySelector('.modal-window').style.display = 'flex'
   let button = document.querySelector(".name-button")
   button.id = idPencil
@@ -59,15 +59,33 @@ function ChangeButton(event, element, index){
           elementValue.textContent = newValue
           console.log(newValue)
           input.remove()
-          button.style.display = none 
-          // if(newValue){
-          //   elementValue.textContent = newValue
-          //   input.remove()
-          // }
-          // else{
-          //   newValue = elementValue.textContent
-          //   input.remove()
-          // }
+          // button.style.display = none 
       }
+  )
+}
+
+for (let i = 0; i < listPencilImage.length; i++) {
+  let pencilImage = listPencilImage[i]
+  pencilImage.addEventListener(
+    type = 'click', 
+    listener = (event) =>{
+      let id = pencilImage.id
+      console.log(id)
+      let input = document.querySelector(".modal-input")
+      input.type = 'file'
+      input.accept = 'image/*'
+      input.enctype = 'multipart/form-data'
+      input.id = id
+      document.querySelector(".modal-text").textContent = "CHANGE IMAGE"
+      document.querySelector('.modal-window').style.display = 'flex'
+      button = document.querySelector(".name-button")
+      button.addEventListener(
+        type = "click",
+        listener = (event)=>{
+          let newValue = input.value.split(/\\/g)[input.value.split(/\\/g).length - 1]
+          button.value = newValue + "^" + id
+        }
+      )
+    }
   )
 }
