@@ -64,7 +64,51 @@ h1{
 .links{
     padding: 4px, 122px, 4px, 122px;
     /* margin-left: 60%; */
-    width: Fixed 1300px;
+    width: 1300px;
     height: Hug 33px;
     size: 24px;
+}
+
+.confirmed{
+    position: absolute;
+    width: 700px;
+    height: 350px;
+    border-radius: 25px;
+    border: 3px solid black;
+    background-color: #FFFFFF;
+    padding: 10px;
+    gap: 10px;
+    
+}
+
+.confirmed h1{
+    width: 441px;
+    height: 95px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 35px;
+    
+    
+}  
+
+.confirmed a{
+    width: 650px;
+    height: 95px;
+    font-family: Inter;
+    font-size: 25px;
+    font-weight: 400;
+    align-items: right;
+    color: black;
+}
+
+.modal-window{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 1440px;
+    height: 600px;
+    padding: 109px, 369px, 109px, 369px;
+    gap: 10px;
+    background-color: #FFFFFFB2;
+    
 }

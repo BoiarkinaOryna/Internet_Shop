@@ -1,4 +1,4 @@
-import flask, os
+import flask, os, flask_login
 from shop_page.models import Product
 from project.settings import DB
 def render_admin_page():
@@ -25,7 +25,9 @@ def render_admin_page():
                 
                 
             elif flask.request.form.get("del") == None:
+                print("db new product")
                 product = Product(
+                    image = flask.request.form["image"],
                     name = flask.request.form["name"],
                     description = flask.request.form["description"],
                     price = flask.request.form["price"],
@@ -50,4 +52,4 @@ def render_admin_page():
         except Exception as e:
             print(e)
         
-    return flask.render_template(template_name_or_list = "admin.html", products = Product.query.all())
+    return flask.render_template(template_name_or_list = "admin.html", products = Product.query.all(), is_authenticated = flask_login.current_user.is_authenticated)

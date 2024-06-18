@@ -89,3 +89,14 @@ for (let i = 0; i < listPencilImage.length; i++) {
     }
   )
 }
+
+let addProductButton = document.querySelector(".plus")
+
+addProductButton.addEventListener(
+  type = "click",
+  listener = (event) =>{
+    console.log("add new product")
+    let addProductForm = document.querySelector(".modal-form")
+    addProductForm.style.display = "flex"
+  }
+)

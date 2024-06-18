@@ -1,4 +1,4 @@
-import flask
+import flask, flask_login
 from shop_page.models import Product
 
 def render_cart_page():
@@ -33,6 +33,6 @@ def render_cart_page():
         except:
             return "Корзина порожня😢"
                     
-        return flask.render_template(template_name_or_list = "cart.html", products = list_products, quantity = products_quantity)
+        return flask.render_template(template_name_or_list = "cart.html", products = list_products, quantity = products_quantity, is_authenticated = flask_login.current_user.is_authenticated)
     else:    
-        return flask.render_template(template_name_or_list = "cart.html")
+        return flask.render_template(template_name_or_list = "cart.html", is_authenticated = flask_login.current_user.is_authenticated)

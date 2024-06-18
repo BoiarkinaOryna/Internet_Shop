@@ -22,11 +22,11 @@ def render_registration_page():
                 for user in User.query.filter_by(name = flask.request.form['name']):
                     if user.password == flask.request.form['password1']:
                         flask_login.login_user(user)
-                        return flask.redirect("/")
+                        # return flask.redirect("/")
             try:
                 DB.session.add(users)
                 DB.session.commit()
-                return flask.redirect("/authorization")
+                # return flask.redirect("/")
                 
             except:
                 return "ERROR"

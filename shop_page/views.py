@@ -1,8 +1,8 @@
-import flask, pandas, os
+import flask, pandas, os, flask_login
 from project.settings import DB
 from .models import Product
 def render_shop_page():
-    # if Product.query.all == False:
+    if Product.query.all == False:
         path_xlsx = os.path.abspath(__file__  + "/../phones_flask_project.xlsx")
 
         read_xlsx = pandas.read_excel(
@@ -29,7 +29,8 @@ def render_shop_page():
 
         DB.session.commit()
 
-        return flask.render_template(
-            template_name_or_list = "shop.html",
-            products = Product.query.all()
-        )
+    return flask.render_template(
+        template_name_or_list = "shop.html",
+        products = Product.query.all(),
+        is_authenticated = flask_login.current_user.is_authenticated
+    )

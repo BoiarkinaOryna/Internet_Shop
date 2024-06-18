@@ -21,10 +21,13 @@
             <p class = "cart"></p>
             <a class = "options" href = "/contacts">CONTACTS</a>
             <a class = "options" href = "/admin">ADMIN</a>
+            {% if not is_authenticated %}
+                <a href = '/registration' class="options">REGISTRATION</a>
+                <a href = "/authorization" class = "options">AUTHORIZATION</a>
+            {% else %}
+                <h1 class = "username">{{ current_user.name }}</h1>
+            {% endif %}
         </div>
-        {% if current_user.is_authenticated %}
-            <h1 class = "username">{{ current_user.name }}</h1>
-        {% endif %}
     </header>
 
     <main>

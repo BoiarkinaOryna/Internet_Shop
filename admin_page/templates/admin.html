@@ -20,13 +20,20 @@
             <a class = "options" href = "/cart">CART</a>
             <a class = "options" href = "/contacts">CONTACTS</a>
             <a class = "active" href = "/admin">ADMIN</a>
+            {% if not is_authenticated %}
+                <a href = '/registration' class="options">REGISTRATION</a>
+                <a href = "/authorization" class = "options">AUTHORIZATION</a>
+            {% else %}
+                <h1 class = "username">{{ current_user.name }}</h1>
+            {% endif %}
         </div>
-        {% if current_user.is_authenticated %}
-            <h1 class = "username">{{ current_user.name }}</h1>
-        {% endif %}
     </header>
 
     <main>
+        <div class="add-product">
+            <p class="add-product-p">додати продукт</p>
+            <button class="plus"><span class = "plus-text">+</span></button>
+        </div>
         {% for product in products %}
             <div class = "product">
         
@@ -76,19 +83,38 @@
                         <img src="{{ url_for( 'shop.static', filename = 'images/trash.png' )}}">
                         
                     </div>
+                    <button style = "background-color: transparent; border: 0" class="pencil-image" id = "{{ product.id }}">
+                        <p class="image">✏</p>
+                    </button>
                 </div>
                 <img src = "{{ url_for( 'shop.static', filename = 'images/' + product.image ) }}">
             </div>
             <script src = "{{ url_for('admin.static', filename = 'js/admin.js')}}" defer></script>
-            <button style = "background-color: transparent; border: 0" class="pencil-image" id = "{{ product.id }}">
-                <p class="image">✏</p>
-            </button> 
+             
         {% endfor %}
         <div class = 'modal-window' style = 'display: none;'>
             <form method="post" class="form"> 
                 <p class="modal-text">CHANGE TEXT:</p>
                 <input class = "modal-input" type="" accept="" enctype = ''>
                 <button name="change" type="submit" value="button-value" class="name-button">SEND</button>
+            </form>
+        </div>
+        <div class="modal-form" style="display: none;">
+            <form method = "post">
+                <h1 class="new-product">NEW PRODUCT</h1>
+                <h1 class = "image-product">IMAGE PRODUCT:</h1>
+                <input type="file" class="input-new-image" name="image">
+                <h1 class = "name-product">NAME PRODUCT:</h1>
+                <input type="text" class="input-new-product" name="name">
+                <h1 class="description-product">DESCRIPTION PRODUCT:</h1>
+                <input type="text" class="input-new-description" name="description">
+                <h1 class = "price-product">PRICE PRODUCT:</h1>
+                <input type="text" class="input-new-price" name="price">
+                <h1 class = "discount-product">DISCOUNT PRODUCT:</h1>
+                <input type="text" class="input-new-discount" name="discount">
+                <h1 class = "count-product">COUNT PRODUCT:</h1>
+                <input type="text" class="input-new-count" name="count">
+                <button class="send-new-product" type = "submit">SEND</button>
             </form>
         </div>
     </main>
