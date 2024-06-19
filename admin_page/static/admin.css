@@ -33,8 +33,6 @@ header{
 
 
 main{
-    /* width: 1440px;
-    height: 1203px; */
     top: 48px;
     left: 1561px;
     padding: 10px 10px 10px 39px;
@@ -346,6 +344,7 @@ main{
  
 
 .modal-input{
+    display: inline-block;
     width: 450px;
     height: 74px;
     top: 139.5px;
@@ -357,6 +356,33 @@ main{
     font-size: 26px;
     padding: 15px;
 }
+
+
+
+.modal-input::file-selector-button {
+
+    width: 241px ;
+    height: 55px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 1px, 31px, 1px, 31px;
+    gap: 10px;
+    background-color: #D1D8DB;
+    color: transparent;
+  }
+  .modal-input::before{
+    content: "";
+
+  }
+  .modal-input::after{
+    content: "SELECT A FILE";
+    position: absolute;
+    /* top: 150px;
+    right: 150px; */
+
+  }
+
+
 
 .name-button{
     width: 446px;

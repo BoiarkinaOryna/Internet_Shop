@@ -3,9 +3,12 @@ from .models import User
 from project.settings import DB
 from project.settings import shop
 
+is_registered = False
 def render_registration_page():
+    global is_registered
     # print("User.query in reg: ", User.query.all())
     # print("flask.request.method =", flask.request.method)
+    
     if flask.request.method == "POST":
         # print("Post")
         if flask.request.form['password1'] == flask.request.form['password2']:   
@@ -26,11 +29,12 @@ def render_registration_page():
             try:
                 DB.session.add(users)
                 DB.session.commit()
+                is_registered = True
                 # return flask.redirect("/")
                 
             except:
                 return "ERROR"
             else:
                 pass
-    return flask.render_template(template_name_or_list = "registration.html")
+    return flask.render_template(template_name_or_list = "registration.html", is_registered = is_registered)
 

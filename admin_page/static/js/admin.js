@@ -72,10 +72,12 @@ for (let i = 0; i < listPencilImage.length; i++) {
       let id = pencilImage.id
       console.log(id)
       let input = document.querySelector(".modal-input")
-      input.type = 'file'
       input.accept = 'image/*'
+      input.type = "file"
       input.enctype = 'multipart/form-data'
       input.id = id
+
+
       document.querySelector(".modal-text").textContent = "CHANGE IMAGE"
       document.querySelector('.modal-window').style.display = 'flex'
       button = document.querySelector(".name-button")

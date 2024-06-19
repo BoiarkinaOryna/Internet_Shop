@@ -3,6 +3,7 @@ import flask_login
 from registration_page.models import User
 from project.settings import DB
 from flask_login import current_user
+from registration_page.views import is_registered
 
 def render_authorization_page():
     # print("User.query:", User.query.all())
@@ -22,4 +23,4 @@ def render_authorization_page():
         #     user_name = flask_login.current_user.name
                     
                 
-    return flask.render_template(template_name_or_list = "authorization.html")
+    return flask.render_template(template_name_or_list = "authorization.html", is_registered = is_registered)
