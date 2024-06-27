@@ -45,7 +45,9 @@
     
         {% endfor %}
         <div class = "order">
-            <button class = "checkout">ПЕРЕЙТИ ДО ОФОРМЛЕННЯ</button>
+            <form action="" method="post">
+                <button class = "checkout">ПЕРЕЙТИ ДО ОФОРМЛЕННЯ</button>
+            </form>
             <div class = "calculation">
                 <h6 class = "price" ><span id = "count-product">0</span> товарів на суму</h6>
                 <h3 class = "price"><span id = "total-price"></span>грн</h3>
@@ -63,4 +65,6 @@
     </main>
     <script src = "{{ url_for('cart.static', filename = 'js/buttonsCookies.js' ) }}"></script>
     <script src = "{{ url_for('cart.static', filename = 'js/productInfo.js' ) }}"></script>
+
+
 {% endblock %}

@@ -1,5 +1,7 @@
-import flask, flask_login
+import flask, flask_login, flask
 from shop_page.models import Product
+from flask_mail import Message
+from project.mail_config import mail
 
 def render_cart_page():
     list_products = []
@@ -32,7 +34,18 @@ def render_cart_page():
                 list_products[-1].count = count_products
         except:
             return "Корзина порожня😢"
-                    
+        
+        if flask.request.method == "POST":
+            for product in list_products:
+                name_product = product.name
+            msg = Message(
+                subject = 'Вітаємо з придбанням!!!',
+                recipients = [flask_login.current_user.email],
+                body = f'Ви придбали товар {name_product}' 
+            )
+            mail.send(msg)
+
+                   
         return flask.render_template(template_name_or_list = "cart.html", products = list_products, quantity = products_quantity, is_authenticated = flask_login.current_user.is_authenticated)
     else:    
         return flask.render_template(template_name_or_list = "cart.html", is_authenticated = flask_login.current_user.is_authenticated)
