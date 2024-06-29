@@ -12,7 +12,7 @@ for (let count = 0; count < listButtonsMinus.length; count++){
                     if (button.nextElementSibling.textContent > 1){
                         listIdProducts.splice(index, 1)
                         button.nextElementSibling.textContent = +button.nextElementSibling.textContent - 1
-                        // console.log(listIdProducts)
+                        console.log(listIdProducts)
 
                         break
                     }

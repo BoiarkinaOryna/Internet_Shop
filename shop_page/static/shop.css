@@ -1,7 +1,6 @@
 header{
-    /* background-color: aquamarine; */
-    width: Fixed (1,440px)px;
-    height: Fixed (80px)px;
+    width: 1440px;
+    height: 80px;
     padding: 17px 39px 17px 39px;
     gap: 387px;
     opacity: 0px;

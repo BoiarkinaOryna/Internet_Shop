@@ -1,8 +1,8 @@
 import flask, flask_migrate, flask_sqlalchemy, os
 
 shop = flask.Flask(
-    import_name = "settings",
-    template_folder = "project/templates",
+    import_name = "project",
+    template_folder = "templates",
     instance_path = os.path.abspath(__file__ + "/..")
 )
 shop.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"

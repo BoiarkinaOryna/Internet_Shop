@@ -7,10 +7,10 @@ is_registered = False
 def render_registration_page():
     global is_registered
     # print("User.query in reg: ", User.query.all())
-    # print("flask.request.method =", flask.request.method)
+    print("flask.request.method =", flask.request.method)
     
     if flask.request.method == "POST":
-        # print("Post")
+        print("Post")
         if flask.request.form['password1'] == flask.request.form['password2']:   
             users = User( 
                 name = flask.request.form['name'],
@@ -18,6 +18,7 @@ def render_registration_page():
                 password = flask.request.form['password1'],
                 password_confirmation = flask.request.form["password2"]
             )
+            print("12")
             if flask_login.current_user.is_authenticated:
                 # print("Ви вже авторизовані")
                 return "Ви вже авторизовані"
@@ -29,6 +30,7 @@ def render_registration_page():
             try:
                 DB.session.add(users)
                 DB.session.commit()
+                print("user registered")
                 is_registered = True
                 # return flask.redirect("/")
                 

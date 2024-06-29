@@ -2,8 +2,13 @@ import flask, flask_login, flask
 from shop_page.models import Product
 from flask_mail import Message
 from project.mail_config import mail
+from project.settings import DB
+from .models import Order
 
+
+waiting = False
 def render_cart_page():
+    global waiting
     list_products = []
     repeat_id = []
     products_quantity = {}
@@ -36,16 +41,39 @@ def render_cart_page():
             return "Корзина порожня😢"
         
         if flask.request.method == "POST":
+
+            print("flask form", flask.request.form)
+            orders = Order(
+                name = flask.request.form['name'],
+                surname = flask.request.form['surname'],
+                email = flask.request.form['email'],
+                phone_number = flask.request.form["phone_number"],
+                city_recepient = flask.request.form["city_recepient"],
+                post_office = flask.request.form["post_office"],
+                add_wishes = flask.request.form["add_wishes"]
+                
+            )
+            DB.session.add(orders)
+            DB.session.commit()
+
             for product in list_products:
                 name_product = product.name
             msg = Message(
                 subject = 'Вітаємо з придбанням!!!',
-                recipients = [flask_login.current_user.email],
+                recipients = [flask.request.form["email"]],
                 body = f'Ви придбали товар {name_product}' 
             )
             mail.send(msg)
 
+            waiting = False
+
                    
-        return flask.render_template(template_name_or_list = "cart.html", products = list_products, quantity = products_quantity, is_authenticated = flask_login.current_user.is_authenticated)
+        return flask.render_template(
+            template_name_or_list = "cart.html",
+            products = list_products,
+            quantity = products_quantity,
+            is_authenticated = flask_login.current_user.is_authenticated,
+            waiting = waiting
+        )
     else:    
         return flask.render_template(template_name_or_list = "cart.html", is_authenticated = flask_login.current_user.is_authenticated)

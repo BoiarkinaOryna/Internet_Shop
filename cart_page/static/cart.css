@@ -1,22 +1,3 @@
-/* main h1{
-    margin: 0 auto;
-    font-size: 100px;
-    font-weight: 400;
-    width: 831px;
-    height: 165px;
-    text-align: center;
-    margin-top: 18%;
-} */
-
-header{
-    /* background-color: aquamarine; */
-    width: 1440px;
-    height: 80px;
-    padding: 17px 39px 17px 39px;
-    gap: 387px;
-    opacity: 0px;
-}
-
 .options{
     text-decoration: none;
 }
@@ -24,15 +5,21 @@ header{
     font-weight: bold;
 }
 
+header{
+    width: 1440px;
+    height: 80px;
+    padding: 17px 39px 17px 39px;
+    gap: 387px;
+    opacity: 0px;
+}
+
 .links{
-    /* background-color: rgb(13, 255, 174); */
     padding: 4px, 122px, 4px, 122px;
     font-weight: 400px;
     display: flex;
     width: 80%;
     height: 47px;
     justify-content: space-around;
-    /* margin: 0 auto; */
 }
 
 .links :visited{
@@ -42,14 +29,11 @@ header{
 .links a{
     color: black;
     font-size: 24px;
-    /* width: 177px; */
     height: 44px;
-    /* background-color: blueviolet; */
     text-align: center;
 }
 
 .username{
-    /* background-color: aqua; */
     width: 247px;
     height: 44px;
     gap: 0px;
@@ -89,7 +73,6 @@ main{
 }
 
 .products h2{
-    /* background-color: black; */
     width: 147px;
     height: 97px;
     gap: 0px;
@@ -99,8 +82,6 @@ main{
     font-weight: 700;
     line-height: 33.89px;
     text-align: center;
-    /* margin-top: 100x; */
-    /* right:50px ; */
     left: 44%;
     margin-top: 50px ;
     position: absolute;
@@ -109,7 +90,6 @@ main{
     background-color:#EFCB4A;
     width: 41px;
     height: 41px;
-    /* padding: 10px 0px 0px 0px; */
     gap: 10px;
     opacity: 0px;
     position: absolute;
@@ -131,10 +111,15 @@ main{
     border: none;
 }
 
-.product_quantity{
-    /* background-color: aquamarine; */
+#total-discount{
+    margin: 0 auto;
+    margin-right: 0px;
+    text-align: right;
+    margin-top: -17%;
+}
+
+.product_quantity{    
     width: 41px;
-    height: 41px;
     padding: 10px 0px 0px 0px;
     gap: 10px;
     position: absolute;
@@ -183,14 +168,12 @@ main{
     text-align: center;
 }
 .calculation{
-    /* background-color: aquamarine; */
     width: 377px;
     height: 53px;
     padding: 10px 0px 0px 0px;
     gap: 26px;
     right: 10%;
     top: 10%;
-    /* margin: 10%; */
 }
 
 .order .calculation h6{
@@ -255,7 +238,6 @@ main{
 }
 
 .order .calculation h2{
-    /* background-color: bisque; */
     font-family: Inter;
     font-size: 22px;
     font-weight: 700;
@@ -263,8 +245,214 @@ main{
     text-align: right;
     width: 220px;
     height: 44px;
-    position: absolute;
+    /* position: absolute; */
     top: 65%;
     right: 2%;
     text-align: center;
+}
+
+
+.placing{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    
+}
+.placing form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    height: 70%;
+    border-radius: 25px;
+    border: 3px solid black;
+    padding: 30px, 10px, 10px, 10px;
+    gap: 16px;
+}
+
+.placing h1{
+    width: 450px;
+    height: 34px;
+    font: Inter;
+    line-height: 33.89px;
+    
+}
+
+.placing form input{
+    width: 450px;
+    height: 30%;
+    border-radius: 15px;
+    border: 2px solid;
+    opacity: 0px;
+
+}
+.send-product{
+    /* margin-top: 60px; */
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30.26px;
+    text-align: center;
+    background-color: #ffffff;
+    border: none;
+    text-decoration: underline;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .order-confirmation{
+    width: 90%;
+    height: 90%;
+    padding: 31px 30px 31px 30px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+*/
+.order-confirmation .data{
+    /* position: absolute; */
+    top: 60px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26.63px;
+    /* margin-left: 40%; */
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.order-confirmation .shop_assistant{
+    /* position: absolute; */
+    top: 100px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26.63px;
+    /* margin-left: 20%; */
+    margin: 0 auto;
+}
+
+.cancel{
+    /* margin-left: 40%; */
+    top: 300px;
+    width:366px;
+    height:73px;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 15px;
+    border: 2px solid;
+    /* opacity: 0px; */
+    background-color: #EFCB4A;
+    /* position: absolute; */
+    /* align-items: center; */
+    text-align: center;
+    /* justify-content: center; */
+    /* right: 410px; */
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 auto;
+}  
+
+.order-confirmation .total-amount{
+    width:786px;
+    height:53px;
+    padding: 10px;
+    gap: 10px;
+    opacity: 0px;
+    font-size: 25px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cancel_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.username{
+    position: absolute;
+    right: 300px;
+}
+
+.waiting-images{
+    width: 150px;
+    height: 150px;
+}
+
+.waiting-products{
+    width: 820px;
+    height: 200px;
+    padding: 10px 0px 0px 0px;
+    gap: 12px;
+    border: 0px 3px 0px 0px;
+    opacity: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.all-waiting-products{
+    width: 850px;
+    /* height: 654px; */
+    padding: 50px 0px 0px 0px;
+    gap: 23px;
+    opacity: 0px;
+    /* border: 2px solid; */
+    margin: 0 auto;
+}
+
+.waiting-product-price{
+    width: 147px;
+    height: 97px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 33.89px;
+    text-align: center;        
+}
+
+.waiting-product-quantity{
+    width: 180px;
+    height: 170px;
+    padding: 10px 0px 0px 0px;
+    gap: 10px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.waiting-name{
+    width: 288px;
+    height: 117px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 33.89px;
+    text-align: center;
+}
+.waiting-total-amount{
+    width: 156px;
+    height: 44px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 29.05px;
+    text-align: right;
+    margin: 0 auto;
 }

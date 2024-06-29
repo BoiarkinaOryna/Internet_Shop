@@ -4,7 +4,7 @@ buttonSubmit.addEventListener(
   type = "click",
   listener = function(event){
     let inputsFilled = true
-    event.preventDefault()
+    // event.preventDefault()
     for (let index = 0; index < regForm.elements.length; index++) { 
       let element = regForm.elements[index]; 
       if (!element.value){

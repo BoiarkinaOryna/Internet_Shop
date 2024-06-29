@@ -65,9 +65,9 @@
                 </div>
                 <img src = "{{ url_for( 'shop.static', filename = 'images/' + product.image ) }}">
             </div>
-            <script src = "{{ url_for('shop.static', filename = 'js/shop.js')}}" defer></script>
 
         {% endfor %}
+        <script src = "{{ url_for('shop.static', filename = 'js/shop.js')}}" defer></script>
     </main>
 
 {% endblock %}

@@ -59,3 +59,30 @@ for (let price of listPrice){
     price.innerText = `${Number(price.innerText.split(" ")[0]).toFixed(2)} грн`
     console.log("price.innerText =", price.innerText)
 }
+
+let checkoutButton = document.querySelector(".checkout")
+
+
+checkoutButton.addEventListener(
+    type = "click",
+    listener = function(event){
+        event.preventDefault()
+        document.querySelector(".placing").style.display = "flex"
+        console.log("aaskasjinaso")
+    }
+)
+
+let sendButton = document.createElement(".send-product")
+
+sendButton.addEventListener(
+    type = "click",
+    listener = function(event){
+        let all = document.querySelectorAll()
+        all.remove()
+        console.log("a")
+
+        let h2 = document.createElement("h2")
+        h2.classList.add("waiting-text")
+        document.body.appendChild(h2)
+    }
+)
